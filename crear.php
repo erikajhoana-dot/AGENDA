@@ -1,15 +1,16 @@
-<?php include __DIR__."/includes/menu.php";?>
-<?php include __DIR__."/includes/header.php";?>
+<?php
+include __DIR__ . "/incluye/header.php";
+include __DIR__ . "/incluye/menu.php";
+?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <title>Crear Contacto</title>
 </head>
 <body>
-
 
     <div id="nuevo-contacto">
         <img src="assets/images/boton-mas.png" alt="Agregar foto">
@@ -19,45 +20,55 @@
         </div>
     </div>
 
-    <form action="guardar.php" method="POST" enctype="multipart/form-data">
+    <main>
 
-        <div id="columna1-crear">
-            <button type="sumit">Seleccionar foto</button>
-            <p>Formatos: JPG, PNG<br>Obligatorio</p>
-        </div>
+        <?php if (!empty($_GET["error"])): ?>
+            <p class="error"><?= htmlspecialchars($_GET["error"], ENT_QUOTES, "UTF-8") ?></p>
+        <?php endif; ?>
 
-        <div id="columna2-crear">
-            <label>Nombre</label><br>
-            <input type="text" name="nombre" required>
-            <br><br>
+        <form action="guardar.php" method="POST" enctype="multipart/form-data">
 
-            <label>Apellido</label><br>
-            <input type="text" name="apellido" required>
-            <br><br>
+            <div id="columna1-crear">
+                <img src="assets/images/boton-mas.png" alt="Seleccionar foto">
+                <label for="foto">Seleccionar foto</label>
+                <input type="file" id="foto" name="foto" accept="image/jpeg,image/png" required>
+                <p>Formatos: JPG, PNG<br>Obligatorio</p>
+            </div>
 
-            <label>Teléfono</label><br>
-            <input type="text" name="telefono" required>
-            <br><br>
+            <div id="columna2-crear">
 
-            <label>Email(opcional)</label><br>
-            <input type="email" name="email">
-            <br><br>
-        </div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-        <div id="columna3-crear">
-            <label>Dirección (opcional)</label>
-            <input type="text" name="direccion">
-            
-            <label>Notas (opcional)</label>
-            <textarea name="notas"></textarea>
-        </div>
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" required>
 
-        <div id="botones-crear">
-            <button type="button">Cancelar</button>
-            <button type="submit">Guardar Contacto</button>
-        </div>
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" name="telefono" required>
 
-    </form>
+                <label for="email">Email (opcional)</label>
+                <input type="email" id="email" name="email">
+
+            </div>
+
+            <div id="columna3-crear">
+
+                <label for="direccion">Dirección (opcional)</label>
+                <input type="text" id="direccion" name="direccion">
+
+                <label for="notas">Notas (opcional)</label>
+                <textarea id="notas" name="notas"></textarea>
+
+            </div>
+
+            <div id="botones-crear">
+                <a href="index.php">Cancelar</a>
+                <button type="submit">Guardar Contacto</button>
+            </div>
+
+        </form>
+
+    </main>
 
 </body>
 </html>
