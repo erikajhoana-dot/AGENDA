@@ -10,39 +10,52 @@
 </head>
 <body>
 
-    <h1>Nuevo Contacto</h1>
+
+    <div id="nuevo-contacto">
+        <img src="assets/images/boton-mas.png" alt="Agregar foto">
+        <div class="Info-sec">
+            <h1>Crear nuevo contacto</h1>
+            <p>Completa el formulario para agregar un nuevo contacto</p>
+        </div>
+    </div>
 
     <form action="guardar.php" method="POST" enctype="multipart/form-data">
 
-        <label>Nombre:</label><br>
-        <input type="text" name="nombre" required>
-        <br><br>
+        <div id="columna1-crear">
+            <button type="sumit">Seleccionar foto</button>
+            <p>Formatos: JPG, PNG<br>Obligatorio</p>
+        </div>
 
-        <label>Apellido:</label><br>
-        <input type="text" name="apellido" required>
-        <br><br>
+        <div id="columna2-crear">
+            <label>Nombre</label><br>
+            <input type="text" name="nombre" required>
+            <br><br>
 
-        <label>Teléfono:</label><br>
-        <input type="text" name="telefono" required>
-        <br><br>
+            <label>Apellido</label><br>
+            <input type="text" name="apellido" required>
+            <br><br>
 
-        <label>Foto:</label><br>
-        <input type="file" name="foto" required>
-        <br><br>
+            <label>Teléfono</label><br>
+            <input type="text" name="telefono" required>
+            <br><br>
 
-        <label>Email:</label><br>
-        <input type="email" name="email">
-        <br><br>
+            <label>Email(opcional)</label><br>
+            <input type="email" name="email">
+            <br><br>
+        </div>
 
-        <label>Dirección:</label><br>
-        <input type="text" name="direccion">
-        <br><br>
+        <div id="columna3-crear">
+            <label>Dirección (opcional)</label>
+            <input type="text" name="direccion">
+            
+            <label>Notas (opcional)</label>
+            <textarea name="notas"></textarea>
+        </div>
 
-        <label>Notas:</label><br>
-        <textarea name="notas"></textarea>
-        <br><br>
-
-        <button type="submit">Guardar Contacto</button>
+        <div id="botones-crear">
+            <button type="button">Cancelar</button>
+            <button type="submit">Guardar Contacto</button>
+        </div>
 
     </form>
 
