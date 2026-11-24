@@ -1,7 +1,11 @@
+<?php include __DIR__."/includes/menu.php";?>
+<?php include __DIR__."/includes/header.php";?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Crear Contacto</title>
 </head>
 <body>
