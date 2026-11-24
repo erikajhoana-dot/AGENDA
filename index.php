@@ -1,5 +1,5 @@
-<?php include __DIR__."/includes/menu.php";?>
 <?php include __DIR__."/includes/header.php";?>
+<?php include __DIR__."/includes/menu.php";?>
 
 <!DOCTYPE html>
 <html lang="en">

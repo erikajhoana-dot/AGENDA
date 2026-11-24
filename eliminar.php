@@ -1,30 +1,48 @@
-<<?php include __DIR__."/includes/menu.php";?>
 <?php include __DIR__."/includes/header.php";?>
+<?php include __DIR__."/includes/menu.php";?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Eliminar contacto</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Eliminar Contacto</title>
 </head>
 <body>
 
-    <h1>Eliminar Contacto</h1>
+    <div id="nuevo-contacto">
+        <img src="assets/images/eliminar-contacto.png" alt="Eliminar contacto">
+        <div class="Info-sec">
+            <h1>Eliminar contacto</h1>
+            <p>Confirma si deseas eliminar un contacto de tu agenda</p>
+        </div>
+    </div>
 
-    <p>¿Está seguro de que desea eliminar este contacto?</p>
+    <main>
 
-    <form action="" method="POST">
+        <form action="" method="POST">
 
-        <label>ID del contacto:</label><br>
-        <input type="number" name="id" required>
+            <div id="columna1-crear">
+                <img src="assets/images/eliminar.png" alt="Eliminar contacto">
+                <p>Eliminar contacto</p>
+            </div>
 
-        <br><br>
+            <div id="columna2-crear">
+    
+                <label for="id">ID del contacto</label>
+                <input type="number" id="id" name="id" required>
+            </div>
 
-        <button type="submit">Eliminar</button>
+            <div id="botones-crear">
+                <a href="index.php">Cancelar</a>
+                <button type="submit">Eliminar contacto</button>
+            </div>
 
-    </form>
+        </form>
+
+    </main>
 
 </body>
 </html>
+

@@ -1,9 +1,7 @@
-<?php include __DIR__."/includes/menu.php";?>
 <?php include __DIR__."/includes/header.php";?>
+<?php include __DIR__."/includes/menu.php";?>
 
 <?php
-
-$id = $_GET['id'];
 
 ?>
 
@@ -11,44 +9,64 @@ $id = $_GET['id'];
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <title>Editar Contacto</title>
 </head>
 <body>
 
-<h1>Editar Contacto</h1>
+    <div id="nuevo-contacto">
+        <img src="assets/images/editar-usuario.png" alt="Editar contacto">
+        <div class="Info-sec">
+            <h1>Editar contacto</h1>
+            <p>Modifica la información del contacto seleccionado</p>
+        </div>
+    </div>
 
-<form action="actualizar.php" method="POST">
+    <main>
 
-    <input type="hidden" name="id" value="<?php echo $id; ?>">
+        <form action="actualizar.php" method="POST">
 
-    <label>Nombre:</label><br>
-    <input type="text" name="nombre" required>
-    <br><br>
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($id, ENT_QUOTES, 'UTF-8'); ?>">
 
-    <label>Apellido:</label><br>
-    <input type="text" name="apellido" required>
-    <br><br>
+            <div id="columna1-crear">
+                <img src="assets/images/boton-mas.png" alt="Foto de contacto">
+                <p>Fotografía del contacto</p>
+            </div>
 
-    <label>Teléfono:</label><br>
-    <input type="text" name="telefono" required>
-    <br><br>
+            <div id="columna2-crear">
 
-    <label>Email:</label><br>
-    <input type="email" name="email">
-    <br><br>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-    <label>Dirección:</label><br>
-    <input type="text" name="direccion">
-    <br><br>
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" required>
 
-    <label>Notas:</label><br>
-    <textarea name="notas"></textarea>
-    <br><br>
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" name="telefono" required>
 
-    <button type="submit">Actualizar</button>
+                <label for="email">Email (opcional)</label>
+                <input type="email" id="email" name="email">
 
-</form>
+            </div>
+
+            <div id="columna3-crear">
+
+                <label for="direccion">Dirección (opcional)</label>
+                <input type="text" id="direccion" name="direccion">
+
+                <label for="notas">Notas (opcional)</label>
+                <textarea id="notas" name="notas"></textarea>
+
+            </div>
+
+            <div id="botones-crear">
+                <a href="index.php">Cancelar</a>
+                <button type="submit">Actualizar Contacto</button>
+            </div>
+
+        </form>
+
+    </main>
 
 </body>
 </html>

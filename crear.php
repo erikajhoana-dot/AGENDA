@@ -1,7 +1,5 @@
-<?php
-include __DIR__ . "/incluye/header.php";
-include __DIR__ . "/incluye/menu.php";
-?>
+<?php include __DIR__."/includes/header.php";?>
+<?php include __DIR__."/includes/menu.php";?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -29,8 +27,7 @@ include __DIR__ . "/incluye/menu.php";
         <form action="guardar.php" method="POST" enctype="multipart/form-data">
 
             <div id="columna1-crear">
-                <img src="assets/images/boton-mas.png" alt="Seleccionar foto">
-                <label for="foto">Seleccionar foto</label>
+                <img src="" alt="Seleccionar foto">
                 <input type="file" id="foto" name="foto" accept="image/jpeg,image/png" required>
                 <p>Formatos: JPG, PNG<br>Obligatorio</p>
             </div>

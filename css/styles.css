@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 * {
@@ -45,12 +46,6 @@ nav a {
     font-weight: 600;
     padding: 11px 17px;
     border-radius: 7px;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-nav a:hover {
-    background-color: #292929;
-    color: #ffffff;
 }
 
 nav a.activo {
@@ -78,18 +73,19 @@ main {
 #nuevo-contacto img {
     width: 65px;
     height: 65px;
+    object-fit: contain;
     border-radius: 50%;
-    background: #e8f0fe;
+    background: none;
 }
 
 .Info-sec h1 {
-    margin: 0 0 8px;
+    margin-bottom: 8px;
     color: #1e293b;
     font-size: 27px;
+    font-weight: 800;
 }
 
 .Info-sec p {
-    margin: 0;
     color: #64748b;
     font-size: 14px;
 }
@@ -101,8 +97,9 @@ form {
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
     display: grid;
-    grid-template-columns: 180px 1fr 1fr;
+    grid-template-columns: 180px repeat(2, 1fr);
     gap: 25px;
 }
 
@@ -114,15 +111,30 @@ form {
     padding-top: 10px;
 }
 
-#columna1-crear button {
+#columna1-crear img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+#columna1-crear label {
     width: 100%;
     padding: 12px 10px;
     background: #eaf1ff;
     color: #2563eb;
     border: 1px solid #bfdbfe;
     border-radius: 8px;
+    font-size: 13px;
     font-weight: 600;
+    text-align: center;
     cursor: pointer;
+}
+
+#columna1-crear input[type="file"] {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 12px;
 }
 
 #columna1-crear p {
@@ -130,6 +142,13 @@ form {
     font-size: 12px;
     text-align: center;
     line-height: 1.6;
+}
+
+#columna2-crear,
+#columna3-crear {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
 }
 
 #columna2-crear label,
@@ -145,7 +164,7 @@ form {
 #columna3-crear textarea {
     width: 100%;
     padding: 12px 14px;
-    box-sizing: border-box;
+    margin-bottom: 20px;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     background: #f8fafc;
@@ -163,32 +182,67 @@ form {
     grid-column: 2 / 4;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap: 12px;
-    padding-top: 15px;
+    padding-top: 20px;
     border-top: 1px solid #e2e8f0;
 }
 
-#botones-crear button {
+#botones-crear button,
+#botones-crear a {
     padding: 12px 22px;
     border-radius: 8px;
+    font-family: inherit;
     font-size: 14px;
     font-weight: 600;
+    text-decoration: none;
     cursor: pointer;
 }
 
-#botones-crear button:first-child {
+#botones-crear a {
     background: #ffffff;
     color: #475569;
     border: 1px solid #cbd5e1;
 }
 
-#botones-crear button:last-child {
+#botones-crear button {
     background: #000000;
     color: #ffffff;
     border: 1px solid #000000;
 }
 
+.error {
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 12px 16px;
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+th {
+    padding: 15px 20px;
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+}
+
 @media (max-width: 750px) {
+
+    main {
+        width: 95%;
+        margin: 30px auto;
+    }
+
+    #nuevo-contacto {
+        margin: 25px 15px;
+        padding: 20px;
+    }
+
     form {
         grid-template-columns: 1fr;
         margin: 15px;
@@ -208,4 +262,6 @@ form {
         flex-wrap: wrap;
     }
 }
+
+
 
