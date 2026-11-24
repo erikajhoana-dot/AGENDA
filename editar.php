@@ -1,3 +1,6 @@
+<?php include __DIR__."/includes/menu.php";?>
+<?php include __DIR__."/includes/header.php";?>
+
 <?php
 
 $id = $_GET['id'];
@@ -8,6 +11,7 @@ $id = $_GET['id'];
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Editar Contacto</title>
 </head>
 <body>
